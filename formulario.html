@@ -12,22 +12,21 @@
   <h1>Bienvenidos a mi fiesta</h1>
   <h2>Por favor, confirmar asistencia:</h2>
 
-  <form class="formulario">
+  <form class="formulario" id="formulario">
     Nombre <input type="text" name="name" id="name">
     <br />
-    Edad <input type="number" name="age" id="age">
+    Edad <input type="text" name="age" id="age"> <!--Se cambio el numero por texto para que no se vena las flechas en edad-->
     <br />
 
     Nacionalidad
     <select name="nationality" id="nationality">
-      <option value="ar">Argentina</option>
-      <option value="mx">Mexicana</option>
-      <option value="per">Peruana</option>
-      <option value="vnzl">Venezolana</option>
+      <option value="argentina">Argentina</option>
+      <option value="mexico">Mexicana</option>
+      <option value="peru">Peruana</option>
+      <option value="venezuela">Venezolana</option>
     </select>
     <br />
-    <input type="submit">
-    <input type="buttonbo">
+    <input id="botonEnviar" type="submit"> <!--se agrga id para el boton de enviar-->
   </form>
 
   <div id="Lista de invitados"> <!--se agrga id en el div-->

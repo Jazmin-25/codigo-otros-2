@@ -1,41 +1,32 @@
-let formulario = document.querySelector("form"); //se quita el # y se añade el ;
+let formulario = document.querySelector(".formulario"); //se quita el # y se acompleta formulario y se añade el ;
 //se cambian las variables var por let.
-formulario.submit = function(e) { //se corrige el onsubmit por submit
-
-  e.preventDefault(); //Se completa la funcion e.prevent con default
+//formulario.onsubmit = function(e) { //se corrige el onsubmit por submit lo tuve que volver a formular
+let botonEnviar = document.getElementById("botonEnviar"); //reformule el boton porque me daba errores
+e.preventDefault(); //Se completa la funcion e.prevent con default
   
-  let n = formulario.elements[0];
-  let e = formulario.elements[1];
-  let na = formulario.elements[2]; //Se agrega el ; al final de cada variable y se cambia por let
+let n = formulario.elements[0];
+let e = formulario.elements[1];
+let na = formulario.elements[2]; //Se agrega el ; al final de cada variable y se cambia por let
+let nombre = n.value; //se agrega el ; y se cabia cada variable por let
+let edad = e.value;
+let i = na.selectedIndex; //se agrega el ;
+let nacionalidad = na.options[i].value;
 
-  let nombre = n.value; //se agrega el ; y se cabia cada variable por let
-  let edad = e.value;
-  let i = na.selectedIndex; //se agrega el ;
-  let nacionalidad = na.options[i].value;
+//console.log(nombre, edad); //se agrega en cada console.log el ; no me sirve
+//console.log(nacionalidad); //se agrega en cada console.log el ; no me sirve
 
-  console.log(nombre, edad); //se agrega en cada console.log el ;
-  console.log(nacionalidad); //se agrega en cada console.log el ;
+  if (nombre.length > 0 &&(edad >=18 && edad <120)) {//reformulo el if
+    agregarInvitado(nombre, edad, nacionalidad);
+    n.classList.toggle("error", nombre.length ===0); //se agrega el ; y se agrega el toggle
+  
+    e.classList.toggle("error", edad < 18 || edad > 120);
+  }//if error antes, ahora es el btnEnviar
 
-  if (nombre.length === 0) {
-    n.classList.add("error"); //se agrega el ;
-  }//if error
-  if (edad < 18 || edad > 120) {
-    e.classList.add("error"); //se agrega el ;
-  }
 
-if (nombre.length > 0 
-  && (edad > 18 
-    && edad < 120) ) {
-  agregarInvitado(nombre, edad, nacionalidad); //se agrega el ;
-  }
-}
-
-let botonBorrar = document.createElement("button"); //se cambia var por let y se agrega ;
-botonBorrar.textContent = "Eliminar invitado";
-botonBorrar.id = "boton-borrar";
-let corteLinea = document.createElement("br"):
-document.body.appendChild(corteLinea):
-document.body.appendChild(botonBorrar);
+//let botonBorrar = document.createElement("button"); //se cambia var por let y se agrega ;
+//botonBorrar.textContent = "Eliminar invitado"; //Se comentan porque no tengo el boton de eliminar invitado. solo borrar
+//botonBorrar.id = "boton-borrar";  se elimina esta seccion 
+//document.body.appendChild(botonBorrar); se comenta porque no se agrego el boton al html
 
 function agregarInvitado(nombre, edad, nacionalidad) {
 
@@ -55,7 +46,7 @@ function agregarInvitado(nombre, edad, nacionalidad) {
 let lista = document.getElementById("lista-de-invitados"); // se agrega ; y se cambia el var por let
 
 let elementoLista = document.createElement("div"); // se agrega ; y se cambia el var por let
-elementoLista.classList.added("elemento-lista"); // se agrega ;
+elementoLista.classList.add("elemento-lista"); // se agrega ; y se cambia el added por add
 lista.appendChild(elementoLista); // se agrega ;
 
 let spanNombre = document.createElement("span"); // se agrega ; y se cambia el var por let
@@ -94,3 +85,8 @@ this.parentNode.style.display = 'none'; //se quita el comentario
 botonBorrar.parentNode.remove(); //se agrega el ;
   }//this.parentNode
 }//boton borrar
+
+//codigo que borre
+//let botonBorrar = document.createElement("button"); //se cambia var por let y se agrega ;
+//botonBorrar.textContent = "Eliminar invitado"; //Se comentan porque no tengo el boton de eliminar invitado. solo borrar
+//botonBorrar.id = "boton-borrar";  se elimina esta seccion 
