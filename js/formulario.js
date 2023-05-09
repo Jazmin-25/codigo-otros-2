@@ -1,3 +1,4 @@
+//El codigo debe registrar a los invitados y a los menores de 18 años tiene que rechazarlos
 let formulario = document.querySelector(".formulario"); //se quita el # y se acompleta formulario y se añade el ;
 //se cambian las variables var por let.
 //formulario.onsubmit = function(e) { //se corrige el onsubmit por submit lo tuve que volver a formular
